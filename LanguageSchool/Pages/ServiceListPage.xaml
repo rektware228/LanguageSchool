@@ -19,6 +19,14 @@
             <ComboBoxItem>По убыванию</ComboBoxItem>
             <ComboBoxItem>По возрастанию</ComboBoxItem>
         </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="230 0 0 0" SelectionChanged="ComboBox_SelectionChanged" x:Name="DiscountFilterCb" >
+            <ComboBoxItem>Все</ComboBoxItem>
+            <ComboBoxItem>0-5%</ComboBoxItem>
+            <ComboBoxItem>5-15%</ComboBoxItem>
+            <ComboBoxItem>15-30%</ComboBoxItem>
+            <ComboBoxItem>30-70%</ComboBoxItem>
+            <ComboBoxItem>70-100%</ComboBoxItem>
+        </ComboBox>
         
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <WrapPanel x:Name="ServicesWp" ></WrapPanel>

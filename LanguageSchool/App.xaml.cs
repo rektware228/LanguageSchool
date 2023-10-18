@@ -14,7 +14,7 @@ namespace LanguageSchool
     /// </summary>
     public partial class App : Application
     {
-        public static LanguaheSchool321Entities1 db = new LanguaheSchool321Entities1();
+        public static SCHOOLEntities db = new SCHOOLEntities();
         public static bool IsAdmin = false;
     }
 }

@@ -10,13 +10,10 @@
 namespace LanguageSchool.Base
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class AttachedProduct
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int MainProductID { get; set; }
-        public int AttachedProductID { get; set; }
-    
-        public virtual Product Product { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

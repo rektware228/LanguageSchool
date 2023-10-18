@@ -45,12 +45,33 @@ namespace LanguageSchool.Pages
                     serviceSortList = serviceSortList.OrderByDescending(x => x.CostAfterDiscount);
                 }
             }
+            if(DiscountFilterCb.SelectedIndex != 0)
+            {
+                if (DiscountFilterCb.SelectedIndex == 1)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0 && x.Discount < 0.05);
+
+                if (DiscountFilterCb.SelectedIndex == 2)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0.05 && x.Discount < 0.15);
+
+                if (DiscountFilterCb.SelectedIndex == 3)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0.15 && x.Discount < 0.3);
+
+                if (DiscountFilterCb.SelectedIndex == 4)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0.3 && x.Discount < 0.7);
+
+                if (DiscountFilterCb.SelectedIndex == 5)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0.7 && x.Discount < 1);
+
+
+            }
+
             ServicesWp.Children.Clear();
             foreach (var service in serviceSortList)
             {
                 ServicesWp.Children.Add(new ServiceUserControl(service));
             }
             
+
             
 
 

@@ -34,7 +34,7 @@ namespace LanguageSchool.Base
             get
             {
                 if (Discount == 0) return "";
-                else return $"* скидка {Discount }%";
+                else return $"* скидка {Discount*100 }%";
             }
         }
 
@@ -52,7 +52,7 @@ namespace LanguageSchool.Base
         public decimal CostAfterDiscount { 
             get
             {
-                return Cost - (Cost * (decimal)Discount / 100);
+                return Cost - (Cost * (decimal)Discount);
             } 
         }
 

@@ -14,7 +14,9 @@
             <RowDefinition Height="61*"></RowDefinition>
             <RowDefinition Height="9*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ComboBox HorizontalAlignment="Left" Margin="15 0" SelectionChanged="ComboBox_SelectionChanged" x:Name="SortCb" >
+
+
+            <ComboBox HorizontalAlignment="Left" Margin="15 0" SelectionChanged="ComboBox_SelectionChanged" x:Name="SortCb" >
             <ComboBoxItem>По умолчанию</ComboBoxItem>
             <ComboBoxItem>По убыванию</ComboBoxItem>
             <ComboBoxItem>По возрастанию</ComboBoxItem>
@@ -27,11 +29,15 @@
             <ComboBoxItem>30-70%</ComboBoxItem>
             <ComboBoxItem>70-100%</ComboBoxItem>
         </ComboBox>
-        
+        <TextBox x:Name="SearchTb" Width="340" Height="30" Margin="430 0 0 0"  Grid.RowSpan="1" TextChanged="SearchTb_TextChanged"/>
+
+
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <WrapPanel x:Name="ServicesWp" ></WrapPanel>
         </ScrollViewer>
         <Button Grid.Row="2" Height="30" Width="100" x:Name="AddBtn">Добавить</Button>
+
+        <TextBlock Grid.Row="2" x:Name="CountDatatb" Margin="20 0" ></TextBlock>
 
     </Grid>
 </Page>

@@ -61,8 +61,12 @@ namespace LanguageSchool.Pages
 
                 if (DiscountFilterCb.SelectedIndex == 5)
                     serviceSortList = serviceSortList.Where(x => x.Discount >= 0.7 && x.Discount < 1);
+            }
 
-
+            if(SearchTb.Text != null)
+            {
+                serviceSortList = serviceSortList.Where(x => x.Title.ToLower().Contains(SearchTb.Text.ToLower())
+                || x.Description.ToLower().Contains(SearchTb.Text.ToLower()));
             }
 
             ServicesWp.Children.Clear();
@@ -70,16 +74,16 @@ namespace LanguageSchool.Pages
             {
                 ServicesWp.Children.Add(new ServiceUserControl(service));
             }
-            
-
-            
-
-
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             refresh(); 
+        }
+
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            refresh();
         }
     }
 }

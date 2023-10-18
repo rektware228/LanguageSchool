@@ -1,4 +1,4 @@
-﻿using LanguageSchool.Components;
+﻿using LanguageSchool.Base;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,7 +14,7 @@ namespace LanguageSchool
     /// </summary>
     public partial class App : Application
     {
-          public static SCHOOLEntities db =
-             new SCHOOLEntities();
+        public static LanguaheSchool321Entities1 db = new LanguaheSchool321Entities1();
+        public static bool IsAdmin = false;
     }
 }

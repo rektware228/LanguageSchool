@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LanguageSchool.Components
+namespace LanguageSchool.Base
 {
     using System;
     using System.Collections.Generic;

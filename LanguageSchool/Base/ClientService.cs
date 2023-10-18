@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LanguageSchool.Components
+namespace LanguageSchool.Base
 {
     using System;
     using System.Collections.Generic;
@@ -22,8 +22,8 @@ namespace LanguageSchool.Components
         }
     
         public int ID { get; set; }
-        public int ClientID { get; set; }
-        public int ServiceID { get; set; }
+        public Nullable<int> ClientID { get; set; }
+        public Nullable<int> ServiceID { get; set; }
         public System.DateTime StartTime { get; set; }
         public string Comment { get; set; }
     

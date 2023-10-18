@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LanguageSchool.Components
+namespace LanguageSchool.Base
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SCHOOLEntities : DbContext
+    public partial class LanguaheSchool321Entities1 : DbContext
     {
-        public SCHOOLEntities()
-            : base("name=SCHOOLEntities")
+        public LanguaheSchool321Entities1()
+            : base("name=LanguaheSchool321Entities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace LanguageSchool.Components
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AttachedProduct> AttachedProduct { get; set; }
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<ClientService> ClientService { get; set; }
         public virtual DbSet<DocumentByService> DocumentByService { get; set; }

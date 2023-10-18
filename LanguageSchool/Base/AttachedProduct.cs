@@ -7,20 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LanguageSchool.Components
+namespace LanguageSchool.Base
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductSale
+    public partial class AttachedProduct
     {
-        public int ID { get; set; }
-        public System.DateTime SaleDate { get; set; }
-        public int ProductID { get; set; }
-        public int Quantity { get; set; }
-        public Nullable<int> ClientServiceID { get; set; }
+        public int MainProductID { get; set; }
+        public int AttachedProductID { get; set; }
     
-        public virtual ClientService ClientService { get; set; }
         public virtual Product Product { get; set; }
     }
 }

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using LanguageSchool.Pages;
 
 namespace LanguageSchool
 {
@@ -23,6 +25,27 @@ namespace LanguageSchool
         public MainWindow()
         {
             InitializeComponent();
+            //var path = @"C:\Users\212111\Desktop\Task\Сессия 1\";
+            //foreach (var item in App.db.Service.ToArray())
+            //{
+            //    var fullPath = path + item.MainImagePath;
+            //    item.MainImage = File.ReadAllBytes(fullPath);
+
+            //}
+            //App.db.SaveChanges();
+            MyFrame.Navigate(new AuthorizatePage());
+        }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if(MyFrame.CanGoBack)
+                MyFrame.GoBack(); MyFrame.RemoveBackEntry();
+        }
+
+        private void ExitBTN_Click(object sender, RoutedEventArgs e)
+        {
+            App.IsAdmin = false;
+            MyFrame.Navigate(new AuthorizatePage());
         }
     }
 }

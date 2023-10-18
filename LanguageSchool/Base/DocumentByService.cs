@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LanguageSchool.Components
+namespace LanguageSchool.Base
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class DocumentByService
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ID { get; set; }
+        public int ClientServiceID { get; set; }
+        public string DocumentPath { get; set; }
+    
+        public virtual ClientService ClientService { get; set; }
     }
 }

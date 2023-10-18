@@ -37,7 +37,7 @@ namespace LanguageSchool.Base
                 else return $"* скидка {Discount*100 }%";
             }
         }
-
+        
         public SolidColorBrush ColorDiscount
         {
             get

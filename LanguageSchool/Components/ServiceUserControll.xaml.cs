@@ -20,9 +20,9 @@ namespace LanguageSchool.Components
     /// <summary>
     /// Логика взаимодействия для UserControl.xaml
     /// </summary>
-    public partial class ServiceUserControl : UserControl
+    public partial class ServiceUserControll : UserControl
     {
-        public ServiceUserControl(Service service)
+        public ServiceUserControll(Service service)
         {
             InitializeComponent();
             if(App.IsAdmin == false)
@@ -47,6 +47,11 @@ namespace LanguageSchool.Components
             image.StreamSource = byteStream;
             image.EndInit();
             return image;
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

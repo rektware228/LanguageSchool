@@ -25,7 +25,7 @@
             <Button x:Name="ExitBTN" Click="ExitBTN_Click">Выход</Button>
         </StackPanel>
 
-        <TextBlock Grid.Column="1" FontSize="25">Школа языков "Леарн"</TextBlock>
+        <TextBlock x:Name="TitleTb" Grid.Column="1" FontSize="25">Школа языков "Леарн"</TextBlock>
         <Frame x:Name="MyFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

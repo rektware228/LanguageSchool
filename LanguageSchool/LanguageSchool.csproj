@@ -136,6 +136,7 @@
     <Compile Include="Base\Tag.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\Navigation.cs" />
     <Compile Include="Components\ServiceUserControll.xaml.cs">
       <DependentUpon>ServiceUserControll.xaml</DependentUpon>
     </Compile>

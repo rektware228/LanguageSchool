@@ -8,7 +8,7 @@
       d:DesignHeight="550" d:DesignWidth="800"
       Title="AddEditService">
 
-    <Grid>
+    <Grid Background="#FFE7E7E7">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -19,25 +19,29 @@
             <RowDefinition></RowDefinition>
 
         </Grid.RowDefinitions>
-        <Image x:Name="AEImage" Grid.Column="1" Grid.Row="0"></Image>
-
+        <Button x:Name="DownloadimageBTN" VerticalAlignment="Bottom" Grid.Column="1" Height="50">Загрузить изображение</Button>
+        <Image x:Name="AEImage" VerticalAlignment="Top" Height="140"  Grid.Column="1" Grid.Row="0" OpacityMask="#FFBFBFBF"></Image>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
 
+
+            <TextBlock Grid.Row="1">ИД</TextBlock>
+            <TextBox Text="{Binding ID}" Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
+            
             <TextBlock Grid.Row="1">Название</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
+            <TextBox Text="{Binding Title}" Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
             
             <TextBlock Grid.Row="1">Стоимость</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
+            <TextBox Text="{Binding Cost}" Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
 
             <TextBlock Grid.Row="1">Длительность</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
+            <TextBox Text="{Binding DurationInSeconds}" Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
             
             <TextBlock Grid.Row="1" >Описание</TextBlock>
-            <TextBox  Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
+            <TextBox  Text="{Binding Description}" Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
 
             <TextBlock Grid.Row="1">Скидка(в десятых)</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
+            <TextBox Text="{Binding Discount}" Grid.Row="1" Grid.Column="1" Height="30" ></TextBox>
             
             <Button x:Name="SaveBTN" Click="SaveBTN_Click">Сохранить</Button>
         </StackPanel>

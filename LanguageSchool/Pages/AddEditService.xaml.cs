@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LanguageSchool.Pages;
+using LanguageSchool.Components;
+using LanguageSchool.Base;
 
 namespace LanguageSchool.Pages
 {
@@ -20,9 +23,11 @@ namespace LanguageSchool.Pages
     /// </summary>
     public partial class AddEditService : Page
     {
-        public AddEditService()
+        private Service service;
+        public AddEditService(Service _service)
         {
             InitializeComponent();
+            service = _service;
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)

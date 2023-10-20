@@ -13,6 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LanguageSchool.Pages;
+
+
 
 namespace LanguageSchool.Pages
 {
@@ -90,7 +93,7 @@ namespace LanguageSchool.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Редактирование улсуги", new AddEditService()));
+            Navigation.NextPage(new PageComponent("Редактирование улсуги", new AddEditService(new Service())));
         }
     }
 }

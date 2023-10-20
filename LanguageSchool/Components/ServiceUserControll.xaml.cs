@@ -28,7 +28,7 @@ namespace LanguageSchool.Components
         {
             service = _service;
             InitializeComponent();
-            if(App.IsAdmin == false)
+            if (App.IsAdmin == false)
             {
                 EditBtn.Visibility = Visibility.Hidden;
                 DeleteBtn.Visibility = Visibility.Hidden;
@@ -54,7 +54,21 @@ namespace LanguageSchool.Components
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Редактирование услуги", new ServiceListPage()));
+            Navigation.NextPage(new PageComponent("Редактирование услуги", new AddEditService(service)));
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (service.ClientService != null)
+            {
+                MessageBox.Show("Удаление запрещено");
+            }
+
+            else
+            {
+                App.db.Service.Remove(service);
+                App.db.SaveChanges();
+            }
         }
     }
 }

@@ -14,7 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using LanguageSchool.Components;
+using LanguageSchool.Pages;
 namespace LanguageSchool.Components
 {
     /// <summary>
@@ -22,8 +23,10 @@ namespace LanguageSchool.Components
     /// </summary>
     public partial class ServiceUserControll : UserControl
     {
-        public ServiceUserControll(Service service)
+        private Service service;
+        public ServiceUserControll(Service _service)
         {
+            service = _service;
             InitializeComponent();
             if(App.IsAdmin == false)
             {
@@ -51,7 +54,7 @@ namespace LanguageSchool.Components
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigation.NextPage(new PageComponent("Редактирование услуги", new ServiceListPage()));
         }
     }
 }

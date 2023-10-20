@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LanguageSchool.Components;
 
 namespace LanguageSchool.Pages
 {
@@ -34,8 +35,8 @@ namespace LanguageSchool.Pages
                 App.IsAdmin= true;
                 MessageBox.Show("Вы вошли как администратор!");
             }
-            
-            NavigationService.Navigate(new ServiceListPage());
+
+            Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
         }
     }
 }

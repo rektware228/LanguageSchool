@@ -72,7 +72,7 @@ namespace LanguageSchool.Pages
             ServicesWp.Children.Clear();
             foreach (var service in serviceSortList)
             {
-                ServicesWp.Children.Add(new ServiceUserControl(service));
+                ServicesWp.Children.Add(new ServiceUserControll(service));
             }
 
             CountDatatb.Text = serviceSortList.Count() + " из " + App.db.Service.Count();
@@ -86,6 +86,11 @@ namespace LanguageSchool.Pages
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
             refresh();
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Редактирование улсуги", new AddEditService()));
         }
     }
 }

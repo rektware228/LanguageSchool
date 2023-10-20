@@ -37,6 +37,12 @@ namespace LanguageSchool.Components
                 Update(components[components.Count - 1]);
             }
         }
+
+        public static void ClearHistory()
+        {
+            App.IsAdmin = false;
+            components.Clear();
+        }
     }
 }
 
@@ -54,4 +60,4 @@ class PageComponent /// нужен для хранения заголовка и
         Page = page;
     }
 }
-}
+

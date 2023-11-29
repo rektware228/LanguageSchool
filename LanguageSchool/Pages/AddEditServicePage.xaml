@@ -1,0 +1,76 @@
+﻿<Page x:Class="LanguageSchool.Pages.AddEditServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LanguageSchool.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="520" d:DesignWidth="800"
+      Title="AddEditServicePage">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Width="350" Height="500">
+                <Border BorderThickness="2" BorderBrush="Gray" Margin="5 10" Height="250" Width="300">
+                    <Image x:Name="MainImage" Source="{Binding MainImage}"
+                           Margin="5"></Image></Border>
+
+                <Button Content="Изменить изображение" Margin="10 0 10 0" x:Name="EditImageBtn" Height="40" Width="200" Click="EditImageBtn_Click"></Button>
+
+                <StackPanel x:Name="StackList" Visibility="Visible">
+                    <ListView x:Name="PhotoList" Margin="5 5 5 0" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Width="290" Height="150">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Height="100" Source="{Binding PhotoPath}"></Image>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsPanel >
+                        <ItemsPanelTemplate >
+                            <WrapPanel ></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Width="70" x:Name="AddImageBtn" Click="AddImageBtn_Click">Добавить</Button>
+                        <Button Width="70" x:Name="DeleteImageBtn" Click="DeleteImageBtn_Click">Удалить</Button>
+                    </StackPanel>
+                </StackPanel>
+                
+
+            </StackPanel>
+            <StackPanel Width="320" Height="450" Margin="0 -30 0 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5" x:Name="IdentityStack">
+                    <TextBlock x:Name="IdTb"><Run Text="Идентификатор"/></TextBlock>
+                    <TextBox Text="{Binding ID}" IsReadOnly="True" PreviewTextInput="TextBox_PreviewTextInput"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                    <TextBlock x:Name="TitleTb" ><Run Text="Название"/></TextBlock>
+                    <TextBox Text="{Binding Title}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                    <TextBlock x:Name="CostTb"  ><Run Text="Стоимость"/></TextBlock>
+                    <TextBox Text="{Binding Cost}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                    <TextBlock x:Name="TimeTb" ><Run Text="Длительность"/></TextBlock>
+                    <TextBox Text="{Binding DurationInSeconds}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                    <TextBlock x:Name="DescriptionTb" ><Run Text="Описание"/></TextBlock>
+                    <TextBox Height="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                    <TextBlock x:Name="DiscountTb"><Run Text="Скидка"/></TextBlock>
+                    <TextBox  Text="{Binding Discount}"/>
+                </StackPanel>
+                <Button  x:Name="SaveBtn" Click="SaveBtn_Click" Content="Сохранить"/>
+            </StackPanel>
+        </StackPanel>
+        
+
+
+        
+        
+    </Grid>
+</Page>

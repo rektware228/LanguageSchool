@@ -8,33 +8,34 @@
              d:DesignHeight="150" d:DesignWidth="450" x:Name="MainBorder" Margin="4">
     <Border  BorderThickness="1" BorderBrush="Gray" Width="750">
         <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8*"></ColumnDefinition>
-            <ColumnDefinition Width="31*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="7*"></RowDefinition>
-            <RowDefinition Height="8*"></RowDefinition>
-            <RowDefinition Height="7*"></RowDefinition>
-            <RowDefinition Height="8*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Image x:Name="MainImage" Grid.Column="0" Grid.RowSpan="4" Source="C:\Users\212111\Source\Repos\DinarLanguageSchool\LanguageSchool\Resources\school_logo.png" Margin="10 15" Height="130" Width="120">
-        </Image>
-        
-        <TextBlock Grid.Row="0" x:Name="TitleTb" Grid.Column="1"></TextBlock>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
+                <ColumnDefinition Width="31*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+                <RowDefinition Height="7*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image x:Name="MainImage" Grid.Column="0" Grid.RowSpan="4" Source="C:\Users\212111\Source\Repos\DinarLanguageSchool\LanguageSchool\Resources\school_logo.png" Margin="10 15" Height="130" Width="120">
+            </Image>
+
+            <TextBlock Grid.Row="0" x:Name="TitleTb" Grid.Column="1"></TextBlock>
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
                 <TextBlock x:Name="CostTb" TextDecorations="Strikethrough"></TextBlock>
                 <TextBlock x:Name="CostTimeTb" ></TextBlock>
             </StackPanel>
             <TextBlock Grid.Row="2" Grid.Column="1" x:Name="DiscountTb"></TextBlock>
-        
 
-        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1"> 
-            <Button x:Name="EditBtn" Click="EditBtn_Click">Редактировать</Button>
-            <Button x:Name="DeleteBtn" Click="DeleteBtn_Click">Удалить</Button>
-        </StackPanel>
-        
-    </Grid>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                <Button x:Name="SignBtn" Click="SignBtn_Click">Записать</Button>
+                <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_Click"></Button>
+                <Button x:Name="DeleteBtn" Content="Удалить" Click="DeleteBtn_Click"/>
+            </StackPanel>
+
+        </Grid>
     </Border>
-    
+
 </UserControl>

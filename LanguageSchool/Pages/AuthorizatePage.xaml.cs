@@ -29,7 +29,7 @@ namespace LanguageSchool.Pages
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.RemoveBackEntry();
-            App.IsAdmin = false;
+            App.IsAdmin = true;
             if (PasswordPb.Password == "0000")
             {
                 App.IsAdmin= true;
@@ -37,6 +37,11 @@ namespace LanguageSchool.Pages
             }
 
             Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
+        }
+
+        private void RegBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Регистрация", new RegistrationPage()));
         }
     }
 }

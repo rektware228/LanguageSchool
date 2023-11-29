@@ -5,27 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LanguageSchool"
         mc:Ignorable="d"
-        Title="Школа языков 'Леарн'" Height="450" Width="860">
+        Title="Школа языков 'Леарн'" Height="630" Width="860">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="24*"></RowDefinition>
-            <RowDefinition Height="143*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="79*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"></ColumnDefinition>
             <ColumnDefinition Width="375*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
+
 
         <Rectangle Fill="#FFE7F9BF" Grid.ColumnSpan="2" ></Rectangle>
-        <Rectangle Fill="#FFE7F9BF" Grid.RowSpan="2"></Rectangle>
-        <Image Source="/Resources/school_logo.png"  />
-        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" >
+        <Rectangle Fill="#FFE7F9BF" Grid.Row="1" Grid.ColumnSpan="2" Width="80" HorizontalAlignment="Left"></Rectangle>
+        <Image Source="/Resources/school_logo.png" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="5 0 0 0"  />
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="80" Height="67" >
             <Button x:Name="BackBTN" Click="BackBTN_Click">Назад</Button>
             <Button x:Name="ExitBTN" Click="ExitBTN_Click">Выход</Button>
         </StackPanel>
 
-        <TextBlock x:Name="TitleTb" Grid.Column="1" FontSize="25">Школа языков "Леарн"</TextBlock>
-        <Frame x:Name="MyFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
+        <TextBlock Grid.Column="1" FontSize="25" HorizontalAlignment="Center" x:Name="TitleTb" Height="35" Width="400" TextAlignment="Center">Школа языков "Леарн"</TextBlock>
+        <Frame x:Name="MyFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="0,1,0,0"></Frame>
     </Grid>
 </Window>

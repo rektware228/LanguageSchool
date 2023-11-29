@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using LanguageSchool.Pages;
-using LanguageSchool.Components;
 
 namespace LanguageSchool
 {
@@ -27,7 +26,7 @@ namespace LanguageSchool
         {
             InitializeComponent();
             Navigation.mainWindow = this;
-            //var path = @"C:\Users\212111\Desktop\Task\Сессия 1\";
+            //var path = @"C:\Users\212111\Desktop\Task\Сессия 1\services_s_import\";
             //foreach (var item in App.db.Service.ToArray())
             //{
             //    var fullPath = path + item.MainImagePath;

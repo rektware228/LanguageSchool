@@ -13,6 +13,7 @@
             <TextBlock>Администратору необходимо ввести пароль</TextBlock>
             <PasswordBox x:Name="PasswordPb"  Margin="5" Height="30"></PasswordBox>
             <Button x:Name="EnterBtn" Click="EnterBtn_Click">Войти</Button>
+            <Button x:Name="RegBtn" Click="RegBtn_Click" >Регистрация</Button>
         </StackPanel>
     </Grid>
 </Page>

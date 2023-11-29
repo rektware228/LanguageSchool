@@ -13,9 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using LanguageSchool.Pages;
-
-
 
 namespace LanguageSchool.Pages
 {
@@ -30,6 +27,7 @@ namespace LanguageSchool.Pages
             if (App.IsAdmin == false)
             {
                 AddBtn.Visibility = Visibility.Hidden;
+                UpcomingBtn.Visibility = Visibility.Hidden;
             }
             var serviceList = App.db.Service.ToList();
             refresh();
@@ -48,42 +46,47 @@ namespace LanguageSchool.Pages
                     serviceSortList = serviceSortList.OrderByDescending(x => x.CostAfterDiscount);
                 }
             }
-            if(DiscountFilterCb.SelectedIndex != 0)
+            if(FilterDiscountCb.SelectedIndex != 0)
             {
-                if (DiscountFilterCb.SelectedIndex == 1)
-                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0 && x.Discount < 0.05);
+                if (FilterDiscountCb.SelectedIndex == 1)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0 && x.Discount < 5);
+                else if (FilterDiscountCb.SelectedIndex == 2)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 5 && x.Discount < 15);
+                else if (FilterDiscountCb.SelectedIndex == 3)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 15 && x.Discount < 30);
+                else if (FilterDiscountCb.SelectedIndex == 4)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 30 && x.Discount < 70);
+                else if (FilterDiscountCb.SelectedIndex == 5)
+                    serviceSortList = serviceSortList.Where(x => x.Discount >= 70 && x.Discount <= 100);
 
-                if (DiscountFilterCb.SelectedIndex == 2)
-                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0.05 && x.Discount < 0.15);
-
-                if (DiscountFilterCb.SelectedIndex == 3)
-                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0.15 && x.Discount < 0.3);
-
-                if (DiscountFilterCb.SelectedIndex == 4)
-                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0.3 && x.Discount < 0.7);
-
-                if (DiscountFilterCb.SelectedIndex == 5)
-                    serviceSortList = serviceSortList.Where(x => x.Discount >= 0.7 && x.Discount < 1);
             }
 
             if(SearchTb.Text != null)
             {
-                serviceSortList = serviceSortList.Where(x => x.Title.ToLower().Contains(SearchTb.Text.ToLower())
-                || x.Description.ToLower().Contains(SearchTb.Text.ToLower()));
+                serviceSortList = serviceSortList.Where(x => x.Title.ToLower().Contains
+                (SearchTb.Text.ToLower()) || x.Description.ToLower().Contains
+                (SearchTb.Text.ToLower()));
             }
-
+            CountDataTb.Text = serviceSortList.Count() + " из " + App.db.Service.Count();
             ServicesWp.Children.Clear();
             foreach (var service in serviceSortList)
             {
                 ServicesWp.Children.Add(new ServiceUserControll(service));
             }
+            
+            
 
-            CountDatatb.Text = serviceSortList.Count() + " из " + App.db.Service.Count();
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             refresh(); 
+        }
+
+        private void FilterDiscountCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            refresh();
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
@@ -93,7 +96,13 @@ namespace LanguageSchool.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Редактирование улсуги", new AddEditService(new Service())));
+            
+            Navigation.NextPage(new PageComponent("Добавление услуги", new AddEditServicePage(new Service())));
+        }
+
+        private void UpcomingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Ближайшие записи", new Upcoming()));
         }
     }
 }

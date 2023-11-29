@@ -34,10 +34,10 @@ namespace LanguageSchool.Base
             get
             {
                 if (Discount == 0) return "";
-                else return $"* скидка {Discount*100 }%";
+                else return $"* скидка {Discount }%";
             }
         }
-        
+
         public SolidColorBrush ColorDiscount
         {
             get
@@ -52,8 +52,10 @@ namespace LanguageSchool.Base
         public decimal CostAfterDiscount { 
             get
             {
-                return Cost - (Cost * (decimal)Discount);
+                
+                return Cost - (Cost * (decimal)Discount / 100);
             } 
+
         }
 
     }

@@ -41,6 +41,7 @@ namespace LanguageSchool.Pages
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
+
             Navigation.NextPage(new PageComponent("Регистрация", new RegistrationPage()));
         }
     }
